@@ -38,6 +38,7 @@ class ProductController extends Controller
         }
     }
 
+
     public function getViewUpdate($id){
         $product = $this->product->productId($id);
 

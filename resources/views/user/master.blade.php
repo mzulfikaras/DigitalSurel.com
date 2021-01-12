@@ -17,7 +17,7 @@
 				<!-- Main -->
                 @yield('main')
 
-				<!-- Footer -->
+                <!-- Footer -->
                 @include('user.layouts.footer')
 
 			</div>
@@ -28,7 +28,9 @@
 			<script src="{{asset('assets/user/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 			<script src="{{asset('assets/user/js/jquery.scrolly.min.js')}}"></script>
 			<script src="{{asset('assets/user/js/jquery.scrollex.min.js')}}"></script>
-			<script src="{{asset('assets/user/js/main.js')}}"></script>
+            <script src="{{asset('assets/user/js/main.js')}}"></script>
+
+            @yield('js')
 
 	</body>
 </html>

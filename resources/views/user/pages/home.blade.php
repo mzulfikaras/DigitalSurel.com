@@ -52,7 +52,7 @@
                     <span class="image">
                         <img src="{{Storage::url($data->image)}}" alt="" height="400" />
                     </span>
-                    <a href="product-details.html">
+                    <a href="{{route('user.product.details', $data->id)}}">
                         <h2>{{ $data->nama_product }}</h2>
 
                         <p><strong>Rp. {{ $data->harga }}</strong></p>

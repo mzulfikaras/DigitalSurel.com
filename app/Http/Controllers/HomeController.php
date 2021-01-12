@@ -40,4 +40,14 @@ class HomeController extends Controller
 
        return view('user.pages.product', compact('dataProduct'));
     }
+
+    public function getShowProduct($id){
+        $showProduct = $this->product->showProduct($id);
+
+        return view('user.pages.product-details', compact('showProduct'));
+    }
+
+    public function checkout(){
+        return view('user.pages.checkout');
+    }
 }

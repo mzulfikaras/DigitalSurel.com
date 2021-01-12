@@ -46,6 +46,12 @@ class ProductRepository{
         return Product::with([])->find($id);
     }
 
+    public function showProduct($id){
+        $product = $this->productId($id);
+
+        return $product;
+    }
+
     public function updateProduct($request,$id){
 
         $product = $this->productId($id);

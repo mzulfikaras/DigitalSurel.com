@@ -21,6 +21,8 @@ Route::prefix('/user')->group( function(){
     Route::get('/home', 'HomeController@index')->name('user.home');
     Route::post('/create-contact', 'HomeController@getContactHome')->name('user.getContactHome');
     Route::get('/prodcut', 'HomeController@getDataProduct')->name('user.product');
+    Route::get('/product-details/{id}', 'HomeController@getShowProduct')->name('user.product.details');
+    Route::get('/checkout','HomeController@checkout')->name('user.checkout');
     Route::get('/contact', 'ContactController@index')->name('user.contact');
 });
 
