@@ -1,6 +1,11 @@
 @extends('user.master')
 @section('title','Home | DigitalSurel.com')
 
+@section('cart-icon')
+    <i class="fa fa-shopping-cart" style="font-size:36px"></i>
+    <span class='badge badge-warning' id='lblCartCount'> {{ $carts->count() }} </span>
+@endsection
+
 @section('main')
 <div id="main">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -36,8 +41,8 @@
     <div class="inner">
         <!-- About Us -->
         <header id="inner">
-            <h1>Find Your New Digital Invitation!</h1>
-            <p>Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum arcu vivamus quis venenatis orci lorem ipsum et magna feugiat veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore.</p>
+            <h1>Find Your Digital Invitation!</h1>
+            <p>Find digital invitation concepts and models on our website. The price is cheap, but not cheap. login, and choose the product now!</p>
         </header>
 
         <br>
@@ -143,7 +148,7 @@
             </article>
         </section> --}}
 
-        <p class="text-center"><a href="products.html">More Invitation &nbsp;<i class="fa fa-long-arrow-right"></i></a></p>
+        <p class="text-center"><a href="{{route('user.product')}}">More Invitation &nbsp;<i class="fa fa-long-arrow-right"></i></a></p>
 
         <br>
 

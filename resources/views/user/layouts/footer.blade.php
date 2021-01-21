@@ -3,7 +3,7 @@
         <section>
             <h2>Contact Us</h2>
             <form method="post" action="{{route('user.getContactHome')}}">
-                
+
                 @csrf
 
                 <div class="fields">
@@ -50,9 +50,9 @@
             <h2>Contact Info</h2>
 
             <ul class="alt">
-                <li><span class="fa fa-envelope-o"></span> <a href="#">contact@company.com</a></li>
-                <li><span class="fa fa-phone"></span> +1 333 4040 5566 </li>
-                <li><span class="fa fa-map-pin"></span> 212 Barrington Court New York, ABC 10001 United States of America</li>
+                <li><span class="fa fa-envelope-o"></span> <a href="#">contact@digitalsurel.com</a></li>
+                <li><span class="fa fa-phone"></span> +62 899 440 7084</li>
+                <li><span class="fa fa-map-pin"></span> Tangerang, Banten, Indonesia</li>
             </ul>
 
             <h2>Follow Us</h2>

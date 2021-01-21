@@ -73,5 +73,7 @@
         <!-- Custom Theme JavaScript -->
         <script src="{{asset('assets/admin/js/startmin.js')}}"></script>
 
+        @yield('js')
+
     </body>
 </html>

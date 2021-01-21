@@ -1,5 +1,9 @@
 @extends('user.master')
 @section('title','Products | DigitalSurel.com')
+@section('cart-icon')
+    <i class="fa fa-shopping-cart" style="font-size:36px"></i>
+    <span class='badge badge-warning' id='lblCartCount'> {{ $carts->count() }} </span>
+@endsection
 
 @section('main')
     <div id="main">
@@ -20,7 +24,7 @@
                         <a href="{{ route('user.product.details', $data->id) }}">
                             <h2>{{ $data->nama_product }}</h2>
 
-                            <p><strong>{{ $data->harga }}</strong></p>
+                            <p><strong>Rp. {{ $data->harga }}</strong></p>
 
                             <p>{{ $data->deskripsi }}</p>
                         </a>

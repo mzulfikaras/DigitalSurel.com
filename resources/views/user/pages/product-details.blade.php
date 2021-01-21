@@ -1,5 +1,9 @@
 @extends('user.master')
 @section('title','Product Details | DigitalSurel.com')
+@section('cart-icon')
+    <i class="fa fa-shopping-cart" style="font-size:36px"></i>
+    <span class='badge badge-warning' id='lblCartCount'> {{ $carts->count() }} </span>
+@endsection
 
 @section('main')
 <div id="main">
@@ -22,78 +26,16 @@
                             </a>
                         </div>
                         <div class="col-sm-7">
-                            {{-- <a href="{{route('user.checkout')}}"> --}}
-                                <input type="button" class="primary" value="Add to Cart"
-                                onclick="cartLS.add({id: {{$showProduct->id}}, name: '{{$showProduct->nama_product}}', price: {{$showProduct->harga}} })">
-                            {{-- </a> --}}
+                            <form action="/user/cart/store/{{ $showProduct->id }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="product_id">
+                                <input type="submit" class="btn btn-secondary" value="Masukkan ke cart">
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="card mb-4 shadow-sm" id="cart">
-                <div class="card-header">
-                    <h2>Cart</h2>
-                </div>
-                <div class="card-body">
-                    <table class="table">
-                        <tbody class="cart">
-                        </tbody>
-                        <tfoot>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td class="text-right" id="total">Total: <strong class="total"></strong></td>
-                            <td></td>
-                        </tfoot>
-                    </table>
-                </div>
-            </div>
         </div>
-
-        <br>
-        <br>
     </div>
 </div>
-@endsection
-
-@section('js')
-<script src="{{asset('assets/user/js/cart-localstorage.min.js')}}" type="text/javascript"></script>
-
-<script>
-    var carts = document.getElementById('cart')
-    var totals = document.getElementById('total')
-    if (totals.innerHTML == "") {
-        carts.style.display = 'none';
-    } else {
-
-    }
-    function renderCart(items) {
-        const $cart = document.querySelector(".cart")
-        const $total = document.querySelector(".total")
-
-        $cart.innerHTML = items.map((item) => `
-                <tr>
-                    <td>#${item.id}</td>
-                    <td>${item.name}</td>
-                    <td>${item.quantity}</td>
-                    <td style="width: 60px;">
-                        <button type="button" class="btn btn-block btn-sm btn-outline-secondary"
-                            onClick="cartLS.quantity(${item.id},1)">+</button>
-                    </td>
-                    <td style="width: 60px;">
-                        <button type="button" class="btn btn-block btn-sm btn-outline-secondary"
-                            onClick="cartLS.quantity(${item.id},-1)">-</button>
-                    </td>
-                    <td class="text-right">Rp ${item.price}</td>
-                    <td class="text-right"><Button class="btn btn-secondary" onClick="cartLS.remove(${item.id})">Delete</Button></td>
-                </tr>`).join("")
-
-        $total.innerHTML = "Rp" + cartLS.total()
-    }
-    renderCart(cartLS.list())
-    cartLS.onChange(renderCart)
-</script>
 @endsection

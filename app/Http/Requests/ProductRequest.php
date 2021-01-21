@@ -27,7 +27,7 @@ class ProductRequest extends FormRequest
             'nama_product' => 'required|min:5',
             'image' => 'required|image|mimes:png,jpg,jpeg',
             'deskripsi' => 'required',
-            'harga' => 'required'
+            'harga' => 'required|numeric'
         ];
     }
 }

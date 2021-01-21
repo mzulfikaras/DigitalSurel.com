@@ -1,7 +1,9 @@
 @extends('admin.master-admin')
 @section('title','Product | DigitalSurel.com')
 
+
 @section('main')
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-12">

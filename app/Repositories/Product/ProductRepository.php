@@ -8,6 +8,12 @@ use Illuminate\Http\Request;
 
 class ProductRepository{
 
+    public function dataProductHome(){
+        $dataProduct = Product::orderBy('created_at','DESC');
+
+        return $dataProduct->paginate(3);
+    }
+
     public function dataProduct(){
 
         $dataProduct = Product::orderBy('created_at','DESC');
